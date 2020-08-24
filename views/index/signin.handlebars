@@ -1,0 +1,16 @@
+{{> header }}
+<section class="login-form">
+    <div class="container">
+        <div class="inner">
+            <h4>Login</h4>
+            <form action="/signin" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <input type="submit" value="Login!">
+            </form>
+            <a href="/signup" class="signup-link">SignUp instead</a>
+        </div>
+    </div>
+</section>

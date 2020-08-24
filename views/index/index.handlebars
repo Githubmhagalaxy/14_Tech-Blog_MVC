@@ -1,0 +1,24 @@
+{{> header }}
+
+{{#if posts.length}}
+    <section class="posts">
+        <div class="container">
+            <ul class="posts-list">
+                {{#each posts}}
+
+                    <li class="single-post">
+                        <div class="post-meta">
+                            <h2 class="title"><a href="/post/{{id}}">{{title}}</a></h2>
+                            <p>Posted By {{user.username}} on {{prettifyDate updatedAt}}</p>
+                        </div>
+                        <div class="post-content">
+                            <p>{{content}}</p>
+                        </div>
+                    </li>
+
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+{{/if}}
+

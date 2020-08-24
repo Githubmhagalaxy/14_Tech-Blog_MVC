@@ -1,0 +1,12 @@
+$primaryColor: rgb(41,23,20);
+$backgroundColor: rgb(217,233,211);
+$blue: rgb(106,167,226);
+$grey: rgb(106,106,106);
+$borderRadius: 5px;
+
+@mixin flex($dir: row, $jus: center, $al: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items: $al;
+}

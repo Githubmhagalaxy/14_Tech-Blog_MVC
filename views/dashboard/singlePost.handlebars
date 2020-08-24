@@ -1,0 +1,24 @@
+{{> header }}
+<section class="new-post-form login-form">
+    <div class="container">
+        <div class="inner">
+            <h4>Edit Post</h4>
+            <form action="/dashboard/post/{{post.id}}?_method=PUT" method="post">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="{{post.title}}">
+                <label for="content">Content</label>
+                <textarea name="content" id="content">{{post.content}}</textarea>
+                <input type="submit" value="Update Post">
+                <button onclick="deletePost(this)">Delete</button>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    const deletePost = (e) => {
+        const newAction = "/dashboard/post/{{post.id}}?_method=DELETE";
+        let form = e.parentElement;
+        form.action = newAction;
+        form.submit();
+    }
+</script>

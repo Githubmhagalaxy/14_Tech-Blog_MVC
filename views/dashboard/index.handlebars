@@ -1,0 +1,29 @@
+{{> header }}
+
+<section class="new-post-sec">
+    <div class="container">
+        <a href="/dashboard/newPost" class="btn">+ New Post</a>
+    </div>
+</section>
+
+{{#if posts.length}}
+    <section class="dash-posts">
+        <div class="container">
+            <ul>
+                {{#each posts}}
+                    <li>
+                        <h3 class="title"><a href="/dashboard/post/{{id}}">{{title}}</a></h3>
+                        <div class="date">{{prettifyDate updatedAt}}</div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+{{else}}
+    <div class="container">
+        <div class="no-post">You don't have any posts!! Try to add one... </div>
+    </div>
+{{/if}}
+
+
+

@@ -1,0 +1,45 @@
+{{> header }}
+
+
+<section>
+    <div class="container">
+        <div class="single-post">
+            <div class="post-meta">
+                <h3 class="title">{{post.title}}</h3>
+                <h5>Posted By {{post.user.username}} on {{prettifyDate post.updatedAt}}</h5>
+            </div>
+            <div class="post-content">
+                <p>{{post.content}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#if post.comments.length}}
+    <section class="comments-sec">
+        <div class="container">
+            <ul>
+                {{#each post.comments}}
+                    <li>
+                        <div class="comment-data">
+                            <p class="text">{{text}}</p>
+                            <p>- {{user.username}}, {{prettifyDate updatedAt}}</p>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+{{/if}}
+
+<section class="new-comment">
+    <div class="container">
+        <div class="inner">
+            <form action="/post/{{post.id}}" method="post">
+                <label for="text">Comment</label>
+                <textarea name="text" id="text" rows="5"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>

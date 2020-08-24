@@ -1,0 +1,253 @@
+@import "vars";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: $backgroundColor;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, button, textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: $primaryColor;
+    padding: 20px 15px 30px;
+    margin-bottom: 30px;
+    ul {
+        @include flex(row, flex-start);
+        li {
+            padding: 5px 20px;
+            color: #fff;
+            a {
+                color: #fff
+            }
+        }
+    }
+    h1 {
+        color: $primaryColor;
+        padding: 25px 25px 5px;
+        span {
+            background-color: $backgroundColor;
+            padding: 10px;
+            border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+            box-shadow: 7px 7px 0 0 $grey;
+        }
+    }
+}
+
+//section.posts {
+//    .container {
+//        > ul {
+//            li {
+//                border: 2px solid $primaryColor;
+//                border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+//                margin: 10px auto;
+//                .post-meta {
+//                    background-color: $primaryColor;
+//                    color: #ffffff;
+//                    @include flex(row, space-between, center);
+//                    padding: 15px;
+//                    .title {
+//                        a {
+//                            color: #ffffff;
+//                            padding: 10px;
+//                        }
+//                    }
+//                }
+//                .post-content {
+//                    padding: 15px;
+//                    p {
+//                        padding: 5px;
+//                        text-align: justify;
+//                        font-size: 1.3em;
+//                        font-weight: 500;
+//                        color: $primaryColor;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+.single-post {
+    border: 2px solid $primaryColor;
+    border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+    margin: 10px auto;
+    .post-meta {
+        background-color: $primaryColor;
+        color: #ffffff;
+        @include flex(row, space-between, center);
+        padding: 15px;
+        .title {
+            a {
+                color: #ffffff;
+                padding: 10px;
+            }
+        }
+    }
+    .post-content {
+        padding: 15px;
+        p {
+            padding: 5px;
+            text-align: justify;
+            font-size: 1.3em;
+            font-weight: 500;
+            color: $primaryColor;
+        }
+    }
+}
+
+section.login-form {
+    .container {
+        .inner {
+            border: 2px solid $primaryColor;
+            border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+            h4 {
+                background-color: $primaryColor;
+                padding: 10px;
+                color: #ffffff;
+                font-size: 1.3em;
+            }
+            form {
+                padding: 10px;
+                > * {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                label {
+                    font-size: 1.2em;
+                    font-weight: 500;
+                    line-height: 30px;
+                }
+                input[type=text], input[type=password], textarea {
+                    font-size: 1.5em;
+                    padding: 5px;
+                }
+            }
+            a.signup-link {
+                display: block;
+                padding: 0 20px 20px;
+                font-size: 1.2em;
+                color: #0c1d99;
+            }
+        }
+    }
+}
+
+input[type=submit], button {
+    background-color: $grey;
+    border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+    padding: 10px;
+    border: 2px solid $grey;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.comments-sec {
+    ul {
+        li {
+            border: 2px solid $primaryColor;
+            border-top-width: 50px;
+            border-radius: $borderRadius $borderRadius $borderRadius$borderRadius;
+            margin-bottom: 20px;
+            .comment-data {
+                padding: 20px 20px 10px;
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+.new-comment {
+    .inner {
+        border: 2px solid $primaryColor;
+        border-top-width: 50px;
+        border-radius: $borderRadius $borderRadius $borderRadius$borderRadius;
+        margin-bottom: 20px;
+        form {
+            padding: 20px;
+            > * {
+                display: block;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            label {
+                font-size: 1.5em;
+                font-weight: 500;
+            }
+            textarea {
+                border: 2px solid $blue;
+                font-size: 1.3em;
+                border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+                padding: 10px;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.new-post-sec {
+    a {
+        padding: 10px;
+        background-color: $primaryColor;
+        border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+        color: #fff;
+        display: inline-block;
+        font-size: 1.3em;
+    }
+}
+
+.no-post {
+    margin: 20px auto;
+    background-color: $primaryColor;
+    border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+    color: #fff;
+    padding: 10px;
+}
+
+section.dash-posts {
+    ul {
+        li {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: $grey;
+            color: #fff;
+            @include flex(row, space-between, center);
+            border-radius: $borderRadius $borderRadius $borderRadius $borderRadius;
+            h3 {
+                font-size: 1.3em;
+                font-weight: 500;
+                a {
+                    color: #fff;
+                }
+            }
+            div.date {
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+        }
+    }
+}
